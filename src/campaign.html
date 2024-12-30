@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Details</title>
+    <link rel="stylesheet" href="campaign.css">
+    <link rel="stylesheet" href="register-campaign.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js" defer></script>
+    <script type="module" src="index.js"  defer></script>
+<script type="module" src="web3.js" defer></script>
+
+</head>
+<body>
+    <div id="campaign-details">
+        <img id="campaign-image" alt="Campaign Image">
+        <h1 id="campaign-title"></h1>
+        <p id="campaign-description"></p>
+        <p>Campaign ID: <span id="campaign-id"></span></p>
+        <p> <span id="campaign-address"></span></p>
+        <p> <span id="campaign-contact"></span></p>
+        <button id="donate-button">Donate Now</button>
+        <button id="deactivateCampaignButton" onclick="deactivateCampaign()">Deactivate Campaign</button>
+    </div>
+
+    
+    <script type="module" src="campaign.js" defer></script>
+ 
+</body>
+</html>

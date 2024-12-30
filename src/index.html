@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIV3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="index.js"defer></script>
+<script type="module" src="web3.js"defer></script>
+<script type="module" src="register.js"defer></script>
+<script type="module" src="campaign.js"defer></script>
+</head>
+<body>
+    
+        <nav class="navbar">
+        <a href="index.html" class="navbar-logo"><img src="assets/logo.webp" alt="GIV3"></a></li>
+        <ul class="navbar-links">
+          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#campaigns">Campaigns</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="right">
+        <a href="" class="mode" ><button class="dark" id="toggleBtn"><img id="modeIcon" src="assets/light-mode.png" alt="mode"></button></a>
+
+        <div class="navbar-actions">
+            <button class="btn btn-primary" id="connect-wallet">Connect Wallet</button>
+            <button  class="btn btn-primary" id="dashboard-btn">Dashboard</button>
+        </div>
+    </div>
+      </nav>
+      <!-- /*Home Section*/ -->
+      <section id="home" class="home-section">
+        <div class="logged-out" id="home-logged-out">
+            <h1>Welcome to GIV3</h1>
+            <p>Your platform to empower change and support meaningful campaigns.</p>
+            <button id="get-started-btn" class="btn1 btn-primary">Get Started</button>
+        </div>
+        <div class="logged-in" id="home-logged-in" style="display: none;">
+            <h1>Welcome back!</h1>
+            <p>Track your contributions, explore campaigns, and make an impact today.</p>
+            <button id="explore-campaigns-btn" class="btn1 btn-primary">Explore Campaigns</button>
+        </div>
+    </section>
+
+    <div class="divider"> </div>
+
+
+
+    <section id="campaigns" class="campaign-section">
+      <button class="nav-btn left">&#8249;</button>
+
+      <h1 class="section-title">Our Campaigns</h1>
+      <div class="campaigns-container" id="campaigns-container">
+
+          <!-- Campaign cards will be dynamically inserted here -->
+
+          <button class="nav-btn right">&#8250;</button>
+
+      </div>
+      <div class="register-campaign">
+          <a href="register-campaign.html" class="register-button" id="register-campaignbtn" >Register Your Own Campaign</a>
+      </div>
+  </section>
+      
+    <button id="goToTopBtn" title="Go to top">Top</button>
+
+
+    <div class="divider"> </div>
+
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <h1 class="about-title">About Us</h1>
+            <p>At GIV3, we use blockchain technology to bring transparency and trust to charitable giving. Our platform tracks every donation, ensuring that each contribution is securely recorded and visible, so donors can see exactly how their money is making an impact. We are committed to empowering charities and giving donors confidence that their generosity is being used effectively. Join us in creating a more transparent and accountable world of giving.</p>
+        </div>
+    </section>
+
+    <div class="divider"> </div>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-text">
+            <h1 class="contact-title">Contact Us</h1>
+            <p>If you have any questions, feel free to reach out to us!</p>
+            <form class="contact-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name">
+
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email"placeholder="Your email address">
+
+                <label for="message">Message</label>
+                <input type="text" name="message" id="message" placeholder="Your message">
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Footer Columns -->
+       
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Email: shreyanshi.230101129@iiitbh.ac.in</p>
+          <p>Phone: +91 7521987999</p>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/github.png" alt="Github"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 GIV3. All Rights Reserved.</p>
+      </div>
+    </footer>
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js" defer></script>
+    <script type="module" src="index.js" defer></script>
+<script type="module" src="web3.js" defer> </script>
+<script type="module" src="dashboard.js" defer> </script>
+</head>
+<body>
+    <div class="home"></div>
+    <a href="index.html" class="home-button">
+        <img src="assets/home.png" alt="Home Icon" class="home-icon">
+    </a>
+</div>
+    <div class="dashboard-section">
+    <div class="dashboard-header">
+        <h1>Welcome back!</h1>
+        <p>Your Wallet: <span id="wallet-address"></span></p>
+    </div>
+
+    <!-- <div class="dashboard-summary">
+        <h2>Summary</h2>
+        <ul>
+            <li>Total Contributions: <span id="total-contributions"></span></li>
+        </ul>
+    </div> -->
+
+    <div class="your-contributions">
+        <h2>Your Contributions</h2>
+        <ul id="contributions-list">
+                        
+        </ul>
+    </div>
+
+    <div class="explore-campaigns">
+        <button id="explore-btn" class="btn btn-primary">Explore More Campaigns</button>
+    </div>
+</div>
+</body>
+</html>

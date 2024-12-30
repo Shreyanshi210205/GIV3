@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Foldit:wght@100..900&family=Fugaz+One&family=Playwrite+NL+Guides&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Foldit:wght@100..900&family=Fugaz+One&family=Oswald:wght@200..700&family=Playwrite+NL+Guides&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Foldit:wght@100..900&family=Fugaz+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Playwrite+NL+Guides&family=Rubik+Glitch&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  background-color: #f3e2c2; /* Light beige background */
+
+}
+*.dark-mode{
+    background-color: #34495E;
+}
+body img{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+}
+
+.dashboard-section {
+    
+    color: #34495E; /* Charcoal text */
+    text-align: center;
+    height: 95vh;
+}
+
+.dashboard-header h1 {
+    font-size: 60px;
+    color: #168845;
+    
+}
+
+.dashboard-header p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: rgb(132, 38, 15);
+    font-weight: 100px;
+    
+    
+}
+.dashboard-summary h2{
+    font-size:35px ;
+    color: #240658;
+}
+
+.dashboard-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-summary li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.your-contributions h2{
+    font-size: 35px;
+    color: #240658;
+
+}
+.your-contributions ul {
+    padding: 33px;
+}
+
+.your-contributions li {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+   
+    border-bottom: 1px solid #1e1212;
+    font-size: 20px;
+}
+
+.your-contributions .campaign-name {
+    font-weight: bold;
+    color: #168845; /* Forest green */
+}
+
+.explore-campaigns {
+    margin-top: 20px;
+}
+
+.explore-campaigns button {
+    padding: 10px 25px;
+    font-size: 20px;
+    background-color: #168845; /* Forest green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.explore-campaigns button:hover {
+    background-color: #145c37; /* Darker green */
+}
+
+@media screen and (max-width: 900px) {
+    .dashboard-header h1 {
+        font-size: 50px;
+    }
+
+    .dashboard-header p {
+        font-size: 18px;
+    }
+
+    .dashboard-summary h2, 
+    .your-contributions h2 {
+        font-size: 30px;
+    }
+
+    .dashboard-summary li, 
+    .your-contributions li {
+        font-size: 18px;
+    }
+
+    .explore-campaigns button {
+        font-size: 18px;
+    }
+}
