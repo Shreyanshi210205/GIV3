@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Foldit:wght@100..900&family=Fugaz+One&family=Oswald:wght@200..700&family=Playwrite+NL+Guides&family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Foldit:wght@100..900&family=Fugaz+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Playwrite+NL+Guides&family=Rubik+Glitch&display=swap');
 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -11,11 +9,22 @@
   font-optical-sizing: auto;
   font-weight: 450;
   font-style: normal;
-  background-color: #f3e2c2; /* Light beige background */
 
 }
-*.dark-mode{
+body.dark-mode{
     background-color: #34495E;
+}
+body.dark-mode h1{
+    color:#ddc8a1;
+}
+body.dark-mode p{
+    color: rgb(232, 53, 53);
+}
+body.dark-mode div{
+    color:#f3e2c2;
+}
+body{
+    background-color: #f3e2c2; /* Light beige background */
 }
 body img{
     width: 60px;
@@ -33,52 +42,29 @@ body img{
 .dashboard-header h1 {
     font-size: 60px;
     color: #168845;
+    padding: 15px;
     
 }
 
+
 .dashboard-header p {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 20px;
     color: rgb(132, 38, 15);
     font-weight: 100px;
+    padding-bottom: 35px;
     
-    
-}
-.dashboard-summary h2{
-    font-size:35px ;
-    color: #240658;
 }
 
-.dashboard-summary ul {
-    list-style: none;
-    padding: 0;
-}
-
-.dashboard-summary li {
-    font-size: 20px;
-    margin: 10px 0;
-}
-.your-contributions h2{
+.balance h1{
     font-size: 35px;
     color: #240658;
+    padding: 15px;
 
 }
-.your-contributions ul {
-    padding: 33px;
-}
 
-.your-contributions li {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px;
-   
-    border-bottom: 1px solid #1e1212;
+.balance div{
     font-size: 20px;
-}
-
-.your-contributions .campaign-name {
-    font-weight: bold;
-    color: #168845; /* Forest green */
 }
 
 .explore-campaigns {
@@ -86,12 +72,13 @@ body img{
 }
 
 .explore-campaigns button {
+    margin: 20px;
     padding: 10px 25px;
     font-size: 20px;
     background-color: #168845; /* Forest green */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 9px;
     cursor: pointer;
 }
 
@@ -121,4 +108,48 @@ body img{
     .explore-campaigns button {
         font-size: 18px;
     }
+}
+.transaction-history {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.transaction-history h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.transaction-card {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.transaction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.transaction-details h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.transaction-details p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.transaction-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.transaction-details a:hover {
+    text-decoration: underline;
 }

@@ -1,5 +1,3 @@
-
-
 import { donateToCampaign } from './web3.js';
 import { connectWallet, checkWalletConnection } from './web3.js';
 

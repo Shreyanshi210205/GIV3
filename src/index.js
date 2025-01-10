@@ -97,6 +97,7 @@ function updateHomeSection(account) {
 }
 
 
+
 //smooth scroll to page
 document.querySelectorAll('.navbar-links a').forEach((link) => {
   link.addEventListener('click', (event) => {

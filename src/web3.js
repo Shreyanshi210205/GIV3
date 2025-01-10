@@ -343,22 +343,9 @@ const contractABI =  [
     ],
     "stateMutability": "view",
     "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_campaignId",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdrawFunds",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
   }
-] ;
-const contractAddress = '0x5fbdb2315678afecb367f032d93f642f64180aa3'; 
+]
+const contractAddress = '0xac7184615A0519462C038Da195aAD2E809e76687'; 
 
 
 async function getEthereumBalance(address) {
@@ -380,8 +367,7 @@ async function getEthereumBalance(address) {
 async function connectWallet() {
   if (window.ethereum) {
     try {
-      // Request account access from the user's wallet
-      accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });//awaits for the method to request to access the user's ethereum account
       web3 = new Web3(window.ethereum); // Initialize Web3 instance with MetaMask provider
       contract = new web3.eth.Contract(contractABI, contractAddress); // Instantiate the contract
 
@@ -397,7 +383,7 @@ async function connectWallet() {
 
 // Function to check if the wallet is already connected
 async function checkWalletConnection() {
-  if (window.ethereum) {
+  if (window.ethereum) {//basically a wallet provider
     try {
       const connectedAccounts = await window.ethereum.request({ method: 'eth_accounts' });
       if (connectedAccounts.length > 0) {
@@ -471,6 +457,7 @@ async function donateToCampaign(donationAmount) {
       alert("Failed to process the transaction. Check the console for details.");
   }
 }
+
 
 async function getConnectedAccount() {
   web3 = new Web3(window.ethereum); // Initialize Web3 instance with MetaMask provider

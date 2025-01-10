@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.18;
 
 contract CampaignManager {
     struct Campaign {
@@ -80,18 +80,7 @@ contract CampaignManager {
         emit CampaignDeactivated(_campaignId, msg.sender);
     }
 
-    // Withdraw funds
-    function withdrawFunds(uint256 _campaignId) payable external {
-        Campaign storage campaign = campaigns[_campaignId];
-        require(campaign.creator == msg.sender, "Only the creator can withdraw funds");
-        require(campaign.totalContributions > 0, "No funds to withdraw");
-
-        uint256 amount = campaign.totalContributions;
-        campaign.totalContributions = 0; 
-        campaign.creator.transfer(amount);
-
-        emit FundsWithdrawn(_campaignId, msg.sender, amount);
-    }
+    
 
     // Get user contributions
     function getUserContributions(address _user)
