@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
-// Assume you have a div with id 'balance-display' in your HTML to display the balance.
-// Example: <div id="balance-display">Loading balance...</div>
-
 document.addEventListener("DOMContentLoaded", async () =>{
         const balanceDisplayElement = document.getElementById('balance-display');
         let address=await getConnectedAccount();
@@ -44,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () =>{
       balanceDisplayElement.textContent = 'Error displaying balance. Check console for details.';
     }
   });
+
   
   
   
