@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
 
-    // Populate the campaign details on the page
     document.getElementById("campaign-id").textContent= `${currentCampaign.campaignId}`;
     document.getElementById("campaign-title").textContent = `${currentCampaign.name}`;
     document.getElementById("campaign-address").textContent=`${currentCampaign.walletAddress}`;
@@ -22,31 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Function to deactivate the campaign with confirmation
+//deactivate the campaign 
 document.getElementById("deactivateCampaignButton").addEventListener("click", () => {
     const currentCampaign = JSON.parse(localStorage.getItem("currentCampaign"));
 
     
 
-    // Show confirmation pop-up
+    // confirmation pop-up
     const confirmation = confirm(
         `Are you sure you want to deactivate the campaign "${currentCampaign.name}"? This action cannot be undone.`
     );
 
     if (confirmation) {
-        // Remove the campaign from localStorage
+        // Remove the campaign
         const campaigns = JSON.parse(localStorage.getItem("campaigns")) || [];
         const updatedCampaigns = campaigns.filter(
             (campaign) => campaign.campaignId !== currentCampaign.campaignId
         );
 
-        // Save the updated list back to localStorage
+        // save the updated list back to localStorage
         localStorage.setItem("campaigns", JSON.stringify(updatedCampaigns));
 
-        // Clear the current campaign
+        // clear the current campaign
         localStorage.removeItem("currentCampaign");
 
-        // Notify the user and redirect
         alert("Campaign deactivated successfully!");
         window.location.href = "index.html"; // Redirect to homepage
     } else {
@@ -69,13 +67,12 @@ initializePage();
 function openDonationPrompt() {
     const donationAmount = prompt("Enter donation amount (in ETH):");
     if (donationAmount) {
-        donateToCampaign(donationAmount); // Pass the entered amount to the Web3 function
+        donateToCampaign(donationAmount); 
     } else {
         alert("Please enter a valid donation amount.");
     }
 }
 
-// Attach the event listener to the "Donate Now" button
 document.getElementById('donate-button').addEventListener('click', openDonationPrompt);
 
 

@@ -1,10 +1,7 @@
-// Initialize web3 and contract variables
-// Initialize web3 and contract variables
 let web3;
 let contract;
 let accounts = [];
 
-// Replace with your contract's ABI and deployed contract address
 const contractABI =  [
   {
     "anonymous": false,
@@ -363,8 +360,7 @@ async function getEthereumBalance(address) {
 }
 
 
-// Function to connect the user's wallet (e.g., MetaMask)
-async function connectWallet() {
+async function connectWallet() {//to connect wallet
   if (window.ethereum) {
     try {
       accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });//awaits for the method to request to access the user's ethereum account
@@ -381,9 +377,9 @@ async function connectWallet() {
   }
 }
 
-// Function to check if the wallet is already connected
+//  check if the wallet is already connected
 async function checkWalletConnection() {
-  if (window.ethereum) {//basically a wallet provider
+  if (window.ethereum) {// a wallet provider
     try {
       const connectedAccounts = await window.ethereum.request({ method: 'eth_accounts' });
       if (connectedAccounts.length > 0) {
@@ -406,7 +402,7 @@ async function checkWalletConnection() {
 }
 
 
-// Function to donate to a campaign
+// donate to a campaign
 async function donateToCampaign(donationAmount) {
   
   if (!web3 || !contract) {
@@ -421,7 +417,7 @@ async function donateToCampaign(donationAmount) {
           return;
       }
 
-      const account = accounts[0]; // Use the first account
+      const account = accounts[0]; 
       console.log("Active account:", account);
 
       const campaignAddress = document.getElementById('campaign-address').textContent.trim();
@@ -447,8 +443,8 @@ async function donateToCampaign(donationAmount) {
             .contributeToCampaign(campaignId, campaignAddress)
             .send({
                 from: account, 
-                to:campaignAddress,// The sender's wallet address
-                value: amountInWei, // The amount to donate in Wei
+                to:campaignAddress,
+                value: amountInWei, // amount to donate in Wei
             });
 
       alert("Donation successful!");
@@ -469,7 +465,7 @@ async function getConnectedAccount() {
           return;
       }
 
-      // Fetch accounts from the Ethereum provider (MetaMask or any injected wallet)
+      // Fetch accounts from the Ethereum provider (MetaMask)
       const accounts = await web3.eth.getAccounts();
 
       if (accounts.length === 0) {
@@ -478,27 +474,14 @@ async function getConnectedAccount() {
           return;
       }
 
-      // The first account is typically the currently connected account
       const connectedAccount = accounts[0];
       console.log("Connected Account:", connectedAccount);
 
-      return connectedAccount; // Optionally return the account for further use
+      return connectedAccount; 
   } catch (error) {
       console.error("Error fetching connected account:", error);
       alert("Error fetching connected account: " + error.message);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 export {web3,contract,checkWalletConnection,connectWallet,getEthereumBalance,donateToCampaign,getConnectedAccount}

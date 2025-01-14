@@ -19,8 +19,8 @@ body::before {
     background-repeat: no-repeat;
     background-size:cover;
    
-    opacity: 0.6; /* Adjust opacity (0 = fully transparent, 1 = fully visible) */
-    z-index: -1; /* Keeps it behind the content */
+    opacity: 0.6; 
+    z-index: -1;
 }
   body {
     
@@ -34,7 +34,6 @@ body::before {
     
   }
   
-  /* Campaign Details Container */
   #campaign-details {
     background:rgb(242, 233, 215);
     border-radius: 15px;
@@ -46,7 +45,6 @@ body::before {
     overflow: hidden;
   }
   
-  /* Campaign Image */
   #campaign-image {
     width: auto;
     height: auto;
@@ -56,7 +54,6 @@ body::before {
     border: solid 4px rgb(251, 211, 93);
   }
   
-  /* Campaign Title */
   #campaign-title {
     font-size:30px;
     color: #2e7d32;
@@ -65,26 +62,23 @@ body::before {
     font-weight: bold;
   }
   
-  /* Campaign Description */
   #campaign-description {
     font-size: 16px;
     color: #555;
     margin-bottom: 15px;
   }
   
-  /* Campaign Info */
   #campaign-id, #campaign-address, #campaign-contact {
     display: block;
     font-size: 16px;
     color: #444;
     margin-bottom: 10px;
     overflow-wrap: break-word;
-    white-space: nowrap; /* Prevent wrapping for single-line display */
+    white-space: nowrap; 
     text-overflow: ellipsis;
-    overflow: hidden; /* Truncate text if it's too long */
+    overflow: hidden; 
   }
   
-  /* Buttons */
   button {
     background-color: #2e7d32;
     color: #fff;
@@ -108,7 +102,6 @@ body::before {
     cursor: not-allowed;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     #campaign-title {
       font-size: 1.8rem;

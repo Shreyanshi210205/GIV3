@@ -1,7 +1,6 @@
 import { connectWallet, checkWalletConnection } from './web3.js';
 
 
-// Get the toggle button, image, and body element
 const toggleBtn = document.getElementById('toggleBtn');
 const modeIcon = document.getElementById('modeIcon');
 const body = document.body;
@@ -28,14 +27,12 @@ toggleBtn.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Check if a wallet is already connected on page load
   const connectedAccount = await checkWalletConnection();//connected wallet account le lo by web3.js k is function se check krke...
   updateNavbar(connectedAccount); // Update navbar based on wallet connection status
   
-  // Event Listener: Handle "Connect Wallet" button click
   const connectWalletBtn = document.getElementById('connect-wallet');
   connectWalletBtn.addEventListener('click', async () => {
-    const account = await connectWallet(); // Trigger wallet connection
+    const account = await connectWallet();
     updateNavbar(account); // Update the section after connection
 
    
@@ -45,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.location.href="dashboard.html";
   })
 });
-// Function: Updates the navbar based on wallet connection state
+//updates the navbar based on wallet connection state
 function updateNavbar(account) {
   const connectWalletButton = document.getElementById('connect-wallet');
   const dashboardButton = document.getElementById('dashboard-btn');
@@ -53,7 +50,7 @@ function updateNavbar(account) {
   if (account) {
     // Wallet is connected: Hide 'Connect Wallet', show 'Dashboard'
     connectWalletButton.style.display = 'none';
-    dashboardButton.style.display = 'inline-block'; // Ensures it takes space
+    dashboardButton.style.display = 'inline-block'; 
   } else {
     // Wallet is not connected: Show 'Connect Wallet', hide 'Dashboard'
     connectWalletButton.style.display = 'inline-block';
@@ -64,21 +61,18 @@ function updateNavbar(account) {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Check wallet connection status when the page loads
   const connectedAccount = await checkWalletConnection();
   updateHomeSection(connectedAccount); // Update the home section based on connection status
 
-  // Event Listener: "Get Started" button click (Logged-out view)
   const getStartedButton = document.getElementById('get-started-btn');
   getStartedButton.addEventListener('click', async () => {
-    const account = await connectWallet(); // Trigger wallet connection
-    updateHomeSection(account); // Update the section after connection
+    const account = await connectWallet(); 
+    updateHomeSection(account); 
   });
 
-  // Event Listener: "Explore Campaigns" button click (Logged-in view)
   const exploreCampaignsButton = document.getElementById('explore-campaigns-btn');
   exploreCampaignsButton.addEventListener('click', () => {
-    window.location.href = '#campaigns'; // Navigate to the campaigns section
+    window.location.href = '#campaigns'; 
   });
 });
 function updateHomeSection(account) {
@@ -86,11 +80,9 @@ function updateHomeSection(account) {
   const loggedInSection = document.getElementById('home-logged-in');
 
   if (account) {
-    // If wallet is connected, show logged-in view and hide logged-out view
     loggedOutSection.style.display = 'none';
     loggedInSection.style.display = 'block';
   } else {
-    // If wallet is not connected, show logged-out view and hide logged-in view
     loggedOutSection.style.display = 'block';
     loggedInSection.style.display = 'none';
   }
@@ -110,7 +102,6 @@ document.querySelectorAll('.navbar-links a').forEach((link) => {
 
 // Get the button
 const goToTopBtn = document.getElementById("goToTopBtn");
-// When the user scrolls down 100px from the top of the document, show the button
 window.onscroll = function() {
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     goToTopBtn.style.display = "block";
@@ -118,19 +109,16 @@ window.onscroll = function() {
     goToTopBtn.style.display = "none";
   }
 };
-// When the user clicks the button, scroll to the top of the document
 goToTopBtn.addEventListener("click", function() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 
-// Get the form element
 const contactForm = document.getElementById("contact");
 // Add an event listener to handle form submission
 contactForm.addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the default form submission (which reloads the page)
+  event.preventDefault(); 
   
-  // You can add your form handling logic here (e.g., show a success message)
   alert("Message sent successfully!");
   contactForm.reset();
 });
@@ -143,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch campaigns from localStorage
   const campaigns = JSON.parse(localStorage.getItem("campaigns")) || [];
 
-  // Loop through campaigns and display them
   campaigns.forEach((campaign, index) => {
       const campaignCard = document.createElement("div");
       campaignCard.classList.add("campaign-card");
@@ -158,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
       campaignsContainer.appendChild(campaignCard);
   });
 
-  // Add event listeners to "Donate" buttons
   document.querySelectorAll(".donate-button").forEach((button) => {
       button.addEventListener("click", (e) => {
           const campaignIndex = e.target.getAttribute("data-index");
@@ -174,7 +160,6 @@ const container = document.getElementById('campaigns-container');
 const leftBtn = document.querySelector('.nav-btn.left');
 const rightBtn = document.querySelector('.nav-btn.right');
 
-// Scroll functionality for buttons
 rightBtn.addEventListener('click', () => {
   container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
 });
@@ -188,7 +173,7 @@ leftBtn.addEventListener('click', () => {
 const registerButton = document.getElementById('register-campaignbtn');
 
 registerButton.addEventListener('click', async (event) => {
-  event.preventDefault(); // Prevent default link behavior
+  event.preventDefault(); 
 
   // Check if the wallet is connected
   const walletAddress = await checkWalletConnection();
@@ -197,7 +182,6 @@ registerButton.addEventListener('click', async (event) => {
     // Redirect to the registration page
     window.location.href = 'register-campaign.html';
   } else {
-    // Show alert if wallet is not connected
     alert('Please connect your wallet to register a campaign.');
   }
 });

@@ -16,7 +16,6 @@ document.getElementById("campaign-form").addEventListener("submit", (e) => {
         return;
     }
 
-    // Fetch all existing campaigns from localStorage
     const campaigns = JSON.parse(localStorage.getItem("campaigns")) || [];
 
     // Check if a campaign with the same ID already exists
@@ -48,14 +47,9 @@ document.getElementById("campaign-form").addEventListener("submit", (e) => {
         campaigns.push(newCampaign);
         localStorage.setItem("campaigns", JSON.stringify(campaigns));
 
-        // Log to see the result in localStorage
-        console.log("Campaign saved to localStorage:", newCampaign);
-        console.log("All campaigns in localStorage:", campaigns);
 
-        // Show success message
         alert("Campaign registered successfully!");
 
-        // Reset the form
         document.getElementById("campaign-form").reset();
     };
 

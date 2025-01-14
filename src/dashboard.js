@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Await the account to ensure you get the connected account
         let account = await getConnectedAccount();
         
-        // Check if account is available
         if (account) {
             document.getElementById('wallet-address').textContent = `${account}`;
         } else {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async () =>{
     }
   
     try {
-      // Fetch the balance using the provided function
       const balance = await getEthereumBalance(address);
   
       if (balance !== null) {
